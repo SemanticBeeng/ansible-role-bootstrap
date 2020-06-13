@@ -3,6 +3,7 @@
   group:
     name: "{{ item.name }}"
     state: present
+    gid: "{{ item.gid|default(omit) }}"
     system: "{{ item.system|default(omit) }}"
   loop: "{{ bootstrap_groups|default([]) }}"
 
@@ -15,6 +16,7 @@
 - name: Add users
   user:
     name: "{{ item.name }}"
+    uid: "{{ item.uid|default(omit) }}"
     comment: "{{ item.comment }}"
     shell: "{{ item.shell|default(omit) }}"
     password: "{{ item.password|default(omit) }}"
