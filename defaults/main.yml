@@ -7,11 +7,11 @@ bootstrap_groups_remove:
   - bluetooth
 bootstrap_locale: "en_US.utf8"
 bootstrap_packages:
-  - git
-  - python-pip
+  #- git
+  #- python-pip
   - python3-pip
   - sudo
-  - ufw
+  - ufw #todo replace with firewallid
 bootstrap_packages_remove:
   # packages not needed on bare metal
   - acpid
